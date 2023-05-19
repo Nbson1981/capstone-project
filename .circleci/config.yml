@@ -85,7 +85,7 @@ jobs:
         - kubernetes/create-or-update-resource:
             resource-file-path: "deployments/deployment.yml"
             get-rollout-status: true
-            watch-timeout: 0
+            watch-timeout: "0"
             watch-rollout-status: true
             resource-name: deployment/capstone
         - kubernetes/create-or-update-resource:
