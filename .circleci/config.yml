@@ -177,7 +177,7 @@ workflows:
           path: ~/project/
           tag: ${CIRCLE_SHA1} 
       - intall-eksctl             
-      - aws-ecr/create-cluster:
+      - aws-eks/create-cluster:
           cluster-name: eks-orb-capstone-project-deployment-${CIRCLE_WORKFLOW_ID:0:7}
           aws-region: $AWS_DEFAULT_REGION
           requires:
