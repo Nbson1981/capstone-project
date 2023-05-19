@@ -182,13 +182,14 @@ workflows:
           aws-region: $AWS_DEFAULT_REGION
           requires:
             - build-and-push-image-ecr
+            - intall-eksctl
       - deploy-application:
           cluster-name: eks-orb-capstone-project-deployment-${CIRCLE_WORKFLOW_ID:0:7}
           aws-region: $AWS_DEFAULT_REGION
           docker-image-name: "${AWS_ECR_URL}/udacity:${CIRCLE_SHA1}"
           version-info: "${CIRCLE_SHA1}"
           requires:
-            - create-cluster
+            - aws-eks/create-cluster
       - test-application:
           cluster-name: eks-orb-capstone-project-deployment-${CIRCLE_WORKFLOW_ID:0:7}
           aws-region: $AWS_DEFAULT_REGION
