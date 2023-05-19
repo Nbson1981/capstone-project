@@ -52,7 +52,8 @@ jobs:
               docker build -t $DOCKERHUB_USERNAME/$IMAGE_NAME:$TAG .
               docker login -u="$DOCKERHUB_USERNAME" -p="$DOCKERHUB_PASSWORD"
               docker tag nguyenbason/$IMAGE_NAME:$TAG nguyenbason/$IMAGE_NAME:latest
-              docker image push -a nguyenbason/$IMAGE_NAME
+              docker push nguyenbason/$IMAGE_NAME:$TAG
+              docker push nguyenbason/$IMAGE_NAME:latest
 
     deploy-application:
       docker:
