@@ -90,7 +90,11 @@ jobs:
             resource-name: deployment/capstone
         - kubernetes/create-or-update-resource:
             resource-file-path: "deployments/clusterip.yml"
-
+        - kubernetes/create-or-update-resource:
+            resource-file-path: "deployments/nodeport.yml"
+        - kubernetes/create-or-update-resource:
+            resource-file-path: "deployments/loadbalancer.yml"
+            
     test-application:
         docker:
           - image: cimg/python:3.10
