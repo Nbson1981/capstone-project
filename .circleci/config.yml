@@ -88,8 +88,8 @@ jobs:
             resource-file-path: "deployments/deployment.yml"
 
     test-application:
-      docker:
-        - image: cimg/python:3.10
+        docker:
+          - image: cimg/python:3.10
         parameters:
           cluster-name:
             description: |
