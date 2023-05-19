@@ -33,7 +33,7 @@ jobs:
             name: Build Docker Image
             command: |
               export TAG=v${CIRCLE_BUILD_NUM}
-              export IMAGE_NAME=capstone
+              export IMAGE_NAME=capstone-project
               docker build -t $DOCKERHUB_USERNAME/$IMAGE_NAME:$TAG .
 
     push-docker-image:
@@ -47,7 +47,7 @@ jobs:
             name: Push Docker Image to Docker Hub
             command: |
               export TAG=v${CIRCLE_BUILD_NUM}
-              export IMAGE_NAME=capstone
+              export IMAGE_NAME=capstone-project
 
               docker build -t $DOCKERHUB_USERNAME/$IMAGE_NAME:$TAG .
               docker login -u="$DOCKERHUB_USERNAME" -p="$DOCKERHUB_PASSWORD"
