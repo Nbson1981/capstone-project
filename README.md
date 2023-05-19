@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/nbson1981/capstone-project.svg?style=svg)](https://circleci.com/gh/nbson1981/capstone-project/)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Nbson1981/capstone-project/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Nbson1981/capstone-project/tree/master)
 
 ## Cloud DevOps Engineer Capstone Project
 
