@@ -73,7 +73,7 @@ jobs:
           description: |
             AWS region
           type: string
-          default: "us-west-2"
+          default: "us-west-1"
       steps:
         - checkout
         - aws-eks/update-kubeconfig-with-authenticator:
