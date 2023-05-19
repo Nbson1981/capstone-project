@@ -87,7 +87,7 @@ jobs:
             resource-file-path: "deployments/deployment.yml"
 
     test-application:
-        executor: aws-eks/python3
+        executor: aws-eks/python
         parameters:
           cluster-name:
             description: |
