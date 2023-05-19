@@ -55,7 +55,8 @@ jobs:
               docker push nguyenbason/$IMAGE_NAME:$TAG
 
     deploy-application:
-      executor: aws-eks/python3
+      docker: 
+        - image: cimg/python:3.10
       parameters:
         cluster-name:
           description: |
