@@ -87,7 +87,6 @@ jobs:
             resource-file-path: "deployments/deployment.yml"
 
     test-application:
-        executor: python
         parameters:
           cluster-name:
             description: |
@@ -103,6 +102,8 @@ jobs:
               Expected app version (this is used for testing that the
               correct version has been deployed)
             type: string
+        docker:
+          - image: cimg/python:3.10-browsers            
         steps:
           - aws-eks/update-kubeconfig-with-authenticator:
               cluster-name: << parameters.cluster-name >>
