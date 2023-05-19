@@ -88,7 +88,8 @@ jobs:
             resource-file-path: "deployments/deployment.yml"
 
     test-application:
-        executor: aws-eks/python3
+      docker:
+        - image: cimg/python:3.10
         parameters:
           cluster-name:
             description: |
