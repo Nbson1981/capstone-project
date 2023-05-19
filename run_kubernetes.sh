@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dockerpath=nguyenbason/capstone_project
+dockerpath=nguyenbason/capstone-project
 TAG=capstoneproject
 
 kubectl run $TAG --image=$dockerpath --generator=run-pod/v1
