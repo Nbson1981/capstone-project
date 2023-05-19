@@ -52,7 +52,7 @@ jobs:
               docker build -t $DOCKERHUB_USERNAME/$IMAGE_NAME:$TAG .
               docker login -u="$DOCKERHUB_USERNAME" -p="$DOCKERHUB_PASSWORD"
               docker tag nguyenbason/$IMAGE_NAME:$TAG nguyenbason/$IMAGE_NAME:latest
-              docker push --all-tags nguyenbason/$IMAGE_NAME
+              docker push -a nguyenbason/$IMAGE_NAME
 
     deploy-application:
       docker:
