@@ -88,12 +88,12 @@ jobs:
             watch-timeout: "0"
             watch-rollout-status: true
             resource-name: deployment/capstone
-        - kubernetes/create-or-update-resource:
-            resource-file-path: "deployments/clusterip.yml"
-        - kubernetes/create-or-update-resource:
-            resource-file-path: "deployments/nodeport.yml"
-        - kubernetes/create-or-update-resource:
-            resource-file-path: "deployments/loadbalancer.yml"
+        # - kubernetes/create-or-update-resource:
+        #     resource-file-path: "deployments/clusterip.yml"
+        # - kubernetes/create-or-update-resource:
+        #     resource-file-path: "deployments/nodeport.yml"
+        # - kubernetes/create-or-update-resource:
+        #     resource-file-path: "deployments/loadbalancer.yml"
 
     test-application:
         docker:
