@@ -83,6 +83,8 @@ jobs:
         - kubernetes/create-or-update-resource:
             resource-file-path: "deployments/deployment.yml"
             #get-rollout-status: true
+            #watch-timeout: 0
+            #watch-rollout-status: true
             resource-name: deployment/capstone
         - kubernetes/create-or-update-resource:
             resource-file-path: "deployments/deployment.yml"
@@ -176,14 +178,14 @@ workflows:
           expected-version-info: "${CIRCLE_SHA1}"
           requires:
             - deploy-application
-      - undeploy-application:
-          cluster-name: eks-orb-capstone-project-deployment-${CIRCLE_WORKFLOW_ID:0:7}
-          aws-region: $AWS_DEFAULT_REGION
-          requires:
-            - test-application
-      - aws-eks/delete-cluster:
-          cluster-name: eks-orb-capstone-project-deployment-${CIRCLE_WORKFLOW_ID:0:7}
-          aws-region: $AWS_DEFAULT_REGION
-          wait: true
-          requires:
-            - undeploy-application
+      # - undeploy-application:
+      #     cluster-name: eks-orb-capstone-project-deployment-${CIRCLE_WORKFLOW_ID:0:7}
+      #     aws-region: $AWS_DEFAULT_REGION
+      #     requires:
+      #       - test-application
+      # - aws-eks/delete-cluster:
+      #     cluster-name: eks-orb-capstone-project-deployment-${CIRCLE_WORKFLOW_ID:0:7}
+      #     aws-region: $AWS_DEFAULT_REGION
+      #     wait: true
+      #     requires:
+      #       - undeploy-application
