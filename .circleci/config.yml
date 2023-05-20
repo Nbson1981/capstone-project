@@ -85,8 +85,8 @@ jobs:
         - run:
             name: deploy application
             command: |
-              kubecctl apply -f deployments/deployment.yml
-              kubecttl expose deployment capstone --type=LoadBalancer --name=capstone-loadbalancer-service
+              kubectl apply -f deployments/deployment.yml
+              kubectl expose deployment capstone --type=LoadBalancer --name=capstone-loadbalancer-service
         # - kubernetes/create-or-update-resource:
         #     resource-file-path: "deployments/deployment.yml"
         #     get-rollout-status: true

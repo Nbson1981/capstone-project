@@ -15,7 +15,7 @@ spec:
         app: capstone
     spec:
       containers:
-      - name: app
+      - name: capstone
         image: nguyenbason/capstone-project:latest
         resources:
           requests:
